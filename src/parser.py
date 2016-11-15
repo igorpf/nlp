@@ -1,11 +1,13 @@
+# coding=utf-8
 import csv
 
 
 # Classe que modela o conjunto de treinamento/teste
 class Data:
     def __init__(self, tweet, target, stance, opinion_towards, sentiment):
-        # type: (basestring, basestring, string, string, basestring) -> object
-        self.tweet = tweet
+        # type: (basestring, basestring, basestring, string, string, basestring) -> object
+        self.tweet = tweet  # Esse vai ser processado
+        self.original_tweet = tweet  # Esse não
         self.target = target
         self.stance = stance
         self.opinionTowards = opinion_towards
@@ -25,7 +27,7 @@ class CsvReader:
         file.close()
         return tweets[1:]
 
-#Teste
+
+# Teste
 if __name__ == '__main__':
-    c = CsvReader("data/StanceDataset/test.csv")
-    print c.parse()[1].tweet
+    pass

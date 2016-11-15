@@ -1,0 +1,16 @@
+Com bag of words sem stopwords
+accuracy:  Atheism 0.363636363636
+accuracy:  Hillary Clinton 0.452054794521
+accuracy:  Donald Trump 0.488636363636
+accuracy:  Legalization of Abortion 0.442857142857
+accuracy:  Climate Change is a Real Concern 0.309523809524
+accuracy:  Feminist Movement 0.464788732394
+
+Com bag of words removendo stopwords
+accuracy:  Atheism 0.436363636364
+accuracy:  Hillary Clinton 0.520547945205
+accuracy:  Donald Trump 0.471590909091
+accuracy:  Legalization of Abortion 0.5
+accuracy:  Climate Change is a Real Concern 0.404761904762
+accuracy:  Feminist Movement 0.43661971831
+
