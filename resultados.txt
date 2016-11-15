@@ -14,3 +14,18 @@ accuracy:  Legalization of Abortion 0.5
 accuracy:  Climate Change is a Real Concern 0.404761904762
 accuracy:  Feminist Movement 0.43661971831
 
+Com bigramas n=200
+accuracy:  Atheism 0.4
+accuracy:  Hillary Clinton 0.356164383562
+accuracy:  Donald Trump 0.528409090909
+accuracy:  Legalization of Abortion 0.414285714286
+accuracy:  Climate Change is a Real Concern 0.166666666667
+accuracy:  Feminist Movement 0.408450704225
+
+Com bigramas n=10
+accuracy:  Atheism 0.381818181818
+accuracy:  Hillary Clinton 0.424657534247
+accuracy:  Donald Trump 0.5
+accuracy:  Legalization of Abortion 0.442857142857
+accuracy:  Climate Change is a Real Concern 0.309523809524
+accuracy:  Feminist Movement 0.43661971831
