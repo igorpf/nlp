@@ -1,8 +1,6 @@
 # coding=utf-8
 import nltk
 from nltk import word_tokenize
-import random
-import csv
 from parser import CsvReader
 from nltk.corpus import stopwords
 from nltk.collocations import BigramCollocationFinder
@@ -21,9 +19,9 @@ class Classifier:
 
 
 if __name__ == '__main__':
-    targets = ["Atheism", "Hillary Clinton", "Donald Trump", "Legalization of Abortion",
+    targets = ["Atheism", "Hillary Clinton", "Legalization of Abortion",
                "Climate Change is a Real Concern", "Feminist Movement"]
-    option = 3
+    option = 4
     # verificar se elemento pertence ao conjunto é mais rápido do que com listas (O(1) vs O(n))
     stop_words = set(stopwords.words('english'))
 
@@ -35,11 +33,12 @@ if __name__ == '__main__':
             bigram_finder = BigramCollocationFinder.from_words(words)
             bigrams = bigram_finder.nbest(BigramAssocMeasures.chi_sq, 10)
             return dict([(ngram, True) for ngram in itertools.chain(words, bigrams)])
-        if option == 3:
+        if option == 3: # Análise de sentimentos
             f = {}
-            #f = dict([(word, True) for word in words if word not in stop_words])
             ss = sia.polarity_scores(orig)
-            f["sentiment"] = sorted(ss, key=ss.get, reverse=True)[0]
+            # tirando o score de compound, pois ele nada revela sobre a polaridade em si
+            score = sorted(filter(lambda x: x != 'compound', ss), key=ss.get, reverse=True)
+            f["sentiment"] = score[0]
             return f
 
 
@@ -47,13 +46,12 @@ if __name__ == '__main__':
     tweets = parser.parse()
     tweets_by_target = [(filter(lambda x: x.target == t, tweets), t)for t in targets]
 
-    for (tweets, target) in tweets_by_target:  # removendo stopwords
+    for (tweets, target) in tweets_by_target:
         for tweet in tweets:
             tweet.tweet = word_tokenize(tweet.tweet)
-
         featuresets = [(features(n, o), tag) for (n, tag, o) in [(tweet.tweet, tweet.stance, tweet.original_tweet) for tweet in tweets]]
-        size = int(len(featuresets) * 0.25)
+        size = int(len(featuresets) * 0.05)
         train_set, test_set = featuresets[size:], featuresets[:size]
         classifier = nltk.NaiveBayesClassifier.train(train_set)
-        #classifier.show_most_informative_features()
+        classifier.show_most_informative_features()
         print 'accuracy: ', target, nltk.classify.accuracy(classifier, test_set)

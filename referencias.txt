@@ -1,0 +1,5 @@
+http://s3.amazonaws.com/academia.edu.documents/34632156/Twitter_Sentiment_Classification_using_Distant_Supervision.pdf?AWSAccessKeyId=AKIAJ56TQJRTWSMTNPEA&Expires=1479209064&Signature=mCAyNtCnI8113uT3m89bUKYb8x8%3D&response-content-disposition=inline%3B%20filename%3DTwitter_Sentiment_Classification_using_D.pdf
+
+http://streamhacker.com/2010/05/24/text-classification-sentiment-analysis-stopwords-collocations/
+
+https://aclweb.org/anthology/S/S16/S16-2021.pdf
