@@ -8,16 +8,6 @@ from nltk.metrics import BigramAssocMeasures
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import itertools
 
-class Classifier:
-    def __init__(self, target, train_set, test_set, classifier):
-        # type: (basestring, list, list, classifier) -> object
-        # Ex: ("Atheism", [],[], NaiveBayesClassifier)
-        self.target = target
-        self.train_set = train_set
-        self.test_set = test_set
-        self.classifier = classifier
-
-
 if __name__ == '__main__':
     targets = ["Atheism", "Hillary Clinton", "Legalization of Abortion",
                "Climate Change is a Real Concern", "Feminist Movement"]
