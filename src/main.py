@@ -11,7 +11,7 @@ import itertools
 if __name__ == '__main__':
     targets = ["Atheism", "Hillary Clinton", "Legalization of Abortion",
                "Climate Change is a Real Concern", "Feminist Movement"]
-    option = 4
+    option = 1
     # verificar se elemento pertence ao conjunto é mais rápido do que com listas (O(1) vs O(n))
     stop_words = set(stopwords.words('english'))
 
